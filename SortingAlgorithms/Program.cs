@@ -17,7 +17,7 @@ namespace SortingAlgorithms
 
             //arr.BubbleSort();
             //arr.InsertionSort();
-            arr.SelectionSort();
+            //arr.SelectionSort();
             //arr.MergeSort();
             foreach (var item in arr)
             {
