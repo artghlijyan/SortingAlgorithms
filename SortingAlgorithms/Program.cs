@@ -8,9 +8,16 @@ namespace SortingAlgorithms
         {
             int[] arr = { 5, 9, 6, 0, 4 };
 
+            foreach (var item in arr)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine(new string('_', 10) + "\n");
+
             //arr.BubbleSort();
             //arr.InsertionSort();
-            //arr.SelectionSort();
+            arr.SelectionSort();
             //arr.MergeSort();
             foreach (var item in arr)
             {
@@ -63,18 +70,23 @@ namespace SortingAlgorithms
 
         static void SelectionSort(this int[] arr)
         {
-            int min;
-            for (int i = 0; i < arr.Length; i++)
+            int min = 0;
+            int minIndex = 0;
+
+            for (int i = 0; i < arr.Length - 1; i++)
             {
                 min = arr[i];
-                for (int j = 0; j < arr.Length - 1; j++)
+
+                for (int j = i + 1; j < arr.Length; j++)
                 {
-                    if (arr[j].CompareTo(min) > 0)
+                    if (arr[j].CompareTo(min) < 0)
                     {
                         min = arr[j];
-                        arr.Swap(i, j);
+                        minIndex = j;
                     }
                 }
+
+                arr.Swap(i, minIndex);
             }
         }
 
